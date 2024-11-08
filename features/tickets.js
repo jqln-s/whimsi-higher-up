@@ -5,7 +5,7 @@ export default async (client) => {
     // Fetch the staff guild by ID
     const guild = client.guilds.cache.get(process.env.STAFFID);
 
-    client.on('messageCreate', async (message) => {
+    client.on(Events.MessageCreate, async (message) => {
         // DMs only
         if (message.guild || message.author.bot) return;
 
@@ -50,7 +50,7 @@ export default async (client) => {
         // Create an embed for the staff's view of the message
         const staffEmbed = new EmbedBuilder()
             .setColor(0x69e7e6)
-            .setTitle('⋆｡‧˚ʚ Support Ticket ɞ˚‧｡⋆')
+            .setTitle('⋆｡‧˚ʚ Higherup Support Ticket ɞ˚‧｡⋆')
             .setAuthor({ name: message.author.username, iconURL: message.author.avatarURL() })
             .setDescription(message.content)
             .setFooter({ text: 'Use /reply to respond and /close to close the ticket.' })
@@ -59,14 +59,14 @@ export default async (client) => {
         // Create an embed for the user's view of the ticket confirmation
         const userEmbed = new EmbedBuilder()
             .setColor(0x69e7e6)
-            .setTitle('⋆｡‧˚ʚ Support Ticket ɞ˚‧｡⋆')
+            .setTitle('⋆｡‧˚ʚ Higherup Support Ticket ɞ˚‧｡⋆')
             .setDescription(
-                '**Thank you** for opening a support ticket.\n\n' +
+                '**Thank you** for opening a higher up support ticket. Admin+ are the only ones who can see these tickets.\n\n' +
                 'Make sure you\'ve provided us with the following information:\n' +
                 '<:whimsi_arrow:1299213631397036105> The question, concern, or problem you need help with\n' +
                 '<:whimsi_arrow:1299213631397036105> Your Discord username\n' +
                 '<:whimsi_arrow:1299213631397036105> Your Minecraft username\n\n' +
-                'Our staff team will be with you as soon as possible. Thanks for your continued patience!'
+                'Our higher up team will be with you as soon as possible. Thanks for your continued patience!'
             )
             .setImage('https://i.imgur.com/LRS6uCl.png');
 
