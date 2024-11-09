@@ -3,7 +3,7 @@ import { SlashCommandBuilder } from 'discord.js';
 export default {
     data: new SlashCommandBuilder()
         .setName('reply')
-        .setDescription('Reply to ticket')
+        .setDescription('Reply to ticket (Higher Up Support)')
         .addStringOption(option =>
             option.setName('response')
                 .setDescription('The response to send')

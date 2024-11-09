@@ -4,7 +4,7 @@ import timeoutStore from '../util/timeoutStore.js'
 export default {
     data: new SlashCommandBuilder()
         .setName('cancel')
-        .setDescription('Cancel the close command'),
+        .setDescription('Cancel the close command (Higher Up Support)'),
     execute(interaction) {
         if (interaction.channel.parentId != '1303121691442020382') {
             return interaction.reply('This command can only be used in higher up tickets.');

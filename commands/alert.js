@@ -4,7 +4,7 @@ import alertStore from '../util/alertStore.js';
 export default {
     data: new SlashCommandBuilder()
     .setName('alert')
-    .setDescription('Pings you for the next update.'),
+    .setDescription('Pings you for the next update. (Higher Up Support)'),
     execute(interaction) {
         if (interaction.channel.parentId != '1303121691442020382') {
             return interaction.reply('This command can only be used in higher up tickets.');
